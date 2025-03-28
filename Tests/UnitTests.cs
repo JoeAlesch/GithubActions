@@ -106,15 +106,7 @@ public class Division
     [TestMethod]
     public void Divide_DivideByZero()
     {
-        try
-        {
-            Program.Divide("5", "0");
-            Assert.Fail("Expected DivideByZeroException to be thrown.");
-        }
-        catch (DivideByZeroException)
-        {
-            // Exception was thrown, test passed
-        }
+        Assert.ThrowsException<DivideByZeroException>(() => Program.Divide("5", "0")); // Possible Change 
     }
 
     [TestMethod]
