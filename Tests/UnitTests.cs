@@ -92,7 +92,7 @@ public class Division
     {
         Assert.AreEqual(2, Program.Divide("6", "3"));
         Assert.AreEqual(5, Program.Divide("15", "3"));
-        Assert.AreEqual(1, Program.Divide("5", "5"));
+        Assert.AreEqual(1, Program.Divide("", "5"));
     }
 
     [TestMethod]
@@ -106,10 +106,18 @@ public class Division
     [TestMethod]
     public void Divide_DivideByZero()
     {
-        Assert.ThrowsException<DivideByZeroException>(() => Program.Divide("5", "0"));
+        try
+        {
+            Program.Divide("5", "0");
+            Assert.Fail("Expected DivideByZeroException to be thrown.");
+        }
+        catch (DivideByZeroException)
+        {
+
+        }
     }
 
-    [TestMethod]
+        [TestMethod]
     public void Divide_Null_Patino()
     {
         Assert.ThrowsException<ArgumentNullException>(() => Program.Divide("6", null));
