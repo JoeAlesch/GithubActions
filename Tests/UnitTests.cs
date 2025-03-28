@@ -6,7 +6,7 @@ public class Addition
 	[TestMethod]
 	public void Add_Valid_Patino()
 	{
-		Assert.AreEqual(4, Program.Add("1", "2")); // Intentional Failure Here
+		Assert.AreEqual(6, Program.Add("1", "2")); // Intentional Failure Here
 		Assert.AreEqual(5, Program.Add("3", "2"));
 		Assert.AreEqual(12, Program.Add("5", "7"));
 	}
