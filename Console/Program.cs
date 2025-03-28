@@ -80,12 +80,23 @@ public class Program
 
 	public static double Divide(string x, string y)
 	{
-		return double.Parse(x) / double.Parse(y);
-	}
+        double numerator = double.Parse(x);		// Changed from Original Function
+        double denominator = double.Parse(y);
 
-	// Implement this method following a similar pattern as above
-	public static double Power(string x, string y)
+        if (denominator == 0)
+        {
+			throw new DivideByZeroException("Error: Division by zero is undefined.");
+        }
+
+        return numerator / denominator;
+    }
+
+    // Implement this method following a similar pattern as above
+    public static double Power(string x, string y)
 	{
-		return 0.0;
+		double baseNum = double.Parse(x);
+		double exponent = double.Parse(y);
+
+		return Math.Pow(baseNum, exponent);
 	}
 }
